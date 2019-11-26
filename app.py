@@ -44,10 +44,11 @@ def after_request(response):
 def index():
     return 'hi'
 
-CORS(post, origins=['http://localhost:3000'], supports_credentials=True)
+
+CORS(post, origins=['http://localhost:3000', 'https://foamisthehome.herokuapp.com'], supports_credentials=True)
 app.register_blueprint(post, url_prefix='/api/v1/posts')
 
-CORS(user, origins=['http://localhost:3000'], supports_credentials=True)
+CORS(user, origins=['http://localhost:3000', 'https://foamisthehome.herokuapp.com'], supports_credentials=True)
 app.register_blueprint(user, url_prefix='/api/v1/user')
 
 if __name__ == '__main__':
